@@ -1,0 +1,10 @@
+##############################################
+# https://www.git-scm.com/docs/gitattributes #
+##############################################
+
+# Automatically normalize file line endings
+* text=auto
+
+# Align with ESLint linebreak-style rule
+# https://eslint.org/docs/rules/linebreak-style#using-this-rule-with-version-control-systems
+*.js text eol=lf
