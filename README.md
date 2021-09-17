@@ -25,7 +25,11 @@ module.exports = {
 
 ```javascript
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:jsdoc/recommended'
+  ],
   root: true,
   rules: {
     'sort-keys': ['error', 'asc', { caseSensitive: false }]
@@ -55,5 +59,4 @@ module.exports = {
 
 - Setup workspace (Lerna)
 - Setup Babel
-- Setup Node
-- Setup TypeScript
+- Setup testing
