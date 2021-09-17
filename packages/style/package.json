@@ -6,34 +6,31 @@
   "license": "MIT",
   "scripts": {
     "format": "npm run lint:script -- --fix && npm run lint:style -- --fix && npm run format:prettier",
-    "format:prettier": "prettier \"./**/*.{css,html,js,json,md,ts,tsx,yaml,yml}\" --write --ignore-path .gitignore",
+    "format:prettier": "prettier \"./**/*.{css,html,js,json,jsx,md,ts,tsx,yaml,yml}\" --write --ignore-path .gitignore",
+    "hook:commit-msg": "commitlint --edit \"$1\"",
+    "hook:pre-commit": "pretty-quick --staged",
     "lint": "npm run lint:md && npm run lint:script && npm run lint:style",
     "lint:md": "markdownlint *.md",
-    "lint:script": "eslint . --ignore-path .gitignore",
+    "lint:script": "eslint \"./**/*.{js,jsx}\" --ignore-path .gitignore",
     "lint:style": "stylelint \"./**/*.scss\"",
+    "prepare": "husky install",
     "test": "npm run lint"
   },
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "eslint": "^7.11.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.5",
-    "markdownlint-cli": "^0.24.0",
-    "prettier": "^2.0.4",
-    "pretty-quick": "^3.0.2",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsdoc": "^36.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "markdownlint-cli": "^0.28.1",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
     "stylelint": "^13.7.2",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "npm test"
-    }
   }
 }

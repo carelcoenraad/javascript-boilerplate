@@ -11,7 +11,7 @@
     "hook:pre-commit": "pretty-quick --staged",
     "lint": "npm run lint:md && npm run lint:script",
     "lint:md": "markdownlint *.md",
-    "lint:script": "eslint \"./**/*.{js,jsx}\" --ignore-path .gitignore",
+    "lint:script": "eslint \"./**/*.{js,jsx,ts,tsx}\" --ignore-path .gitignore",
     "prepare": "husky install",
     "test": "npm run lint"
   },
@@ -19,6 +19,9 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@types/node": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsdoc": "^36.1.0",
@@ -26,6 +29,8 @@
     "husky": "^7.0.2",
     "markdownlint-cli": "^0.28.1",
     "prettier": "^2.4.1",
-    "pretty-quick": "^3.1.1"
+    "pretty-quick": "^3.1.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
   }
 }
