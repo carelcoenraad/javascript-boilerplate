@@ -1,5 +1,6 @@
 module.exports = {
   env: {
+    es2021: true,
     mocha: true,
     node: true
   },
@@ -8,9 +9,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jsdoc/recommended'
   ],
-  parserOptions: {
-    ecmaVersion: 'latest'
-  },
   root: true,
   rules: {
     'sort-keys': ['error', 'asc', { caseSensitive: false }]
