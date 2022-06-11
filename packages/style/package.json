@@ -10,7 +10,7 @@
     "hook:commit-msg": "commitlint --edit \"$1\"",
     "hook:pre-commit": "pretty-quick --staged",
     "lint": "npm run lint:md && npm run lint:script && npm run lint:style",
-    "lint:md": "markdownlint *.md",
+    "lint:md": "markdownlint \"./**/*.md\" --ignore-path .gitignore",
     "lint:script": "eslint \"./**/*.{js,jsx}\" --ignore-path .gitignore",
     "lint:style": "stylelint \"./**/*.scss\"",
     "prepare": "husky install",
