@@ -54,9 +54,3 @@ module.exports = {
   trailingComma: 'none'
 };
 ```
-
-## TODO
-
-- Setup workspace (Lerna)
-- Setup Babel
-- Setup testing
